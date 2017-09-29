@@ -48,6 +48,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Foo.cs" />
+    <Compile Include="FooTemplateSelector.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

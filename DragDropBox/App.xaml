@@ -4,10 +4,20 @@
              xmlns:local="clr-namespace:DragDropBox"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type local:Foo}">
-            <Border Background="Blue">
-                <TextBlock Text="{Binding Name}" />
-            </Border>
-        </DataTemplate>
+        <local:FooTemplateSelector x:Key="FooTemplateSelector">
+            <local:FooTemplateSelector.EmptyTemplate>
+                <DataTemplate>
+                    <Border Background="Yellow" />
+                </DataTemplate>
+            </local:FooTemplateSelector.EmptyTemplate>
+
+            <local:FooTemplateSelector.FooTemplate>
+                <DataTemplate DataType="{x:Type local:Foo}">
+                    <Border Background="Blue">
+                        <TextBlock Text="{Binding Name}" />
+                    </Border>
+                </DataTemplate>
+            </local:FooTemplateSelector.FooTemplate>
+        </local:FooTemplateSelector>
     </Application.Resources>
 </Application>

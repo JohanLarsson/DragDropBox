@@ -1,5 +1,6 @@
 ﻿namespace DragDropBox
 {
+    using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
@@ -15,20 +16,39 @@
         {
             if (e.Source is ContentPresenter contentPresenter)
             {
-                DragDrop.DoDragDrop(contentPresenter, new DataObject("foo",  contentPresenter.Content), DragDropEffects.Move);
+                Debug.WriteLine("DoDragDrop");
+                if (DragDrop.DoDragDrop(contentPresenter, new DataObject(typeof(Foo), contentPresenter.Content), DragDropEffects.Move) == DragDropEffects.Move)
+                {
+                    contentPresenter.SetCurrentValue(ContentPresenter.ContentProperty, null);
+                }
             }
         }
 
         private void OnDragEnter(object sender, DragEventArgs e)
         {
+            if (e.Source is ContentPresenter contentPresenter &&
+                e.Data.GetDataPresent(typeof(Foo)))
+            {
+                Debug.WriteLine($"DragEnter {contentPresenter.Name}");
+                contentPresenter.SetCurrentValue(AllowDropProperty, true);
+            }
         }
 
         private void OnDrop(object sender, DragEventArgs e)
         {
             if (e.Source is ContentPresenter contentPresenter)
             {
-                contentPresenter.SetCurrentValue(ContentPresenter.ContentProperty, e.Data.GetData("foo"));
+                Debug.WriteLine($"Drop: {contentPresenter.Name}");
+                contentPresenter.SetCurrentValue(ContentPresenter.ContentProperty, e.Data.GetData(typeof(Foo)));
+                e.Effects = DragDropEffects.Move;
+                e.Handled = true;
             }
+        }
+
+        private void OnDragLeave(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.None;
+            e.Handled = true;
         }
     }
 }
