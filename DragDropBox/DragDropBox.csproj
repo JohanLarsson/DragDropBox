@@ -47,6 +47,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DragAdorner.cs" />
     <Compile Include="Foo.cs" />
     <Compile Include="FooTemplateSelector.cs" />
     <Compile Include="ViewModel.cs" />

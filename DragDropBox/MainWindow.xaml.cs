@@ -1,6 +1,5 @@
 ﻿namespace DragDropBox
 {
-    using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
@@ -20,21 +19,6 @@
                 {
                     contentPresenter.SetCurrentValue(ContentPresenter.ContentProperty, null);
                 }
-            }
-        }
-
-        private void OnDragEnter(object sender, DragEventArgs e)
-        {
-
-        }
-
-
-        private void OnDragOver(object sender, DragEventArgs e)
-        {
-            if (e.Source is ContentPresenter contentPresenter &&
-                e.Data.GetDataPresent(typeof(Foo)))
-            {
-                contentPresenter.SetCurrentValue(AllowDropProperty, true);
             }
         }
 
