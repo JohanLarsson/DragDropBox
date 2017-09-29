@@ -11,36 +11,38 @@
     <Window.DataContext>
         <dragDropBox:ViewModel />
     </Window.DataContext>
-    <UniformGrid Columns="2" Rows="2" DragLeave="OnDragLeave">
+    <UniformGrid Columns="2"
+                 DragLeave="OnDragLeave"
+                 Rows="2">
         <ContentPresenter x:Name="ContentPresenter1"
-                          AllowDrop="True"
                           Content="{Binding Foo1, Mode=TwoWay}"
                           ContentTemplateSelector="{StaticResource FooTemplateSelector}"
                           DragEnter="OnDragEnter"
+                          DragOver="OnDragOver"
                           Drop="OnDrop"
                           MouseLeftButtonDown="OnMouseLeftButtonDown" />
 
         <ContentPresenter x:Name="ContentPresenter2"
-                          AllowDrop="True"
                           Content="{Binding Foo2, Mode=TwoWay}"
                           ContentTemplateSelector="{StaticResource FooTemplateSelector}"
                           DragEnter="OnDragEnter"
+                          DragOver="OnDragOver"
                           Drop="OnDrop"
                           MouseLeftButtonDown="OnMouseLeftButtonDown" />
 
         <ContentPresenter x:Name="ContentPresenter3"
-                          AllowDrop="True"
                           Content="{Binding Foo3, Mode=TwoWay}"
                           ContentTemplateSelector="{StaticResource FooTemplateSelector}"
                           DragEnter="OnDragEnter"
+                          DragOver="OnDragOver"
                           Drop="OnDrop"
                           MouseLeftButtonDown="OnMouseLeftButtonDown" />
 
         <ContentPresenter x:Name="ContentPresenter4"
-                          AllowDrop="True"
                           Content="{Binding Foo4, Mode=TwoWay}"
                           ContentTemplateSelector="{StaticResource FooTemplateSelector}"
                           DragEnter="OnDragEnter"
+                          DragOver="OnDragOver"
                           Drop="OnDrop"
                           MouseLeftButtonDown="OnMouseLeftButtonDown" />
     </UniformGrid>

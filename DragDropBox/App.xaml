@@ -7,14 +7,16 @@
         <local:FooTemplateSelector x:Key="FooTemplateSelector">
             <local:FooTemplateSelector.EmptyTemplate>
                 <DataTemplate>
-                    <Border Background="Yellow" />
+                    <Border Background="Blue" />
                 </DataTemplate>
             </local:FooTemplateSelector.EmptyTemplate>
 
             <local:FooTemplateSelector.FooTemplate>
                 <DataTemplate DataType="{x:Type local:Foo}">
-                    <Border Background="Blue">
-                        <TextBlock Text="{Binding Name}" />
+                    <Border Background="Yellow">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Name}" />
                     </Border>
                 </DataTemplate>
             </local:FooTemplateSelector.FooTemplate>
