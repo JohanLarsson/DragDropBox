@@ -16,7 +16,7 @@
                  Rows="2">
         <ContentPresenter x:Name="ContentPresenter1"
                           AllowDrop="True"
-                          Content="{Binding Foo1, Mode=TwoWay}"
+                          Content="{Binding Foo1}"
                           ContentTemplateSelector="{StaticResource FooTemplateSelector}"
                           Drop="OnDrop"
                           MouseLeftButtonDown="OnMouseLeftButtonDown" />

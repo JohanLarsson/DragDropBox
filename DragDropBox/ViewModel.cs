@@ -7,7 +7,7 @@
     {
         private Foo foo1 = new Foo("Johan");
         private Foo foo2;
-        private Foo foo3;
+        private Foo foo3 = new Foo("Erik");
         private Foo foo4;
 
         public event PropertyChangedEventHandler PropertyChanged;
