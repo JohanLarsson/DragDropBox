@@ -7,8 +7,10 @@
     {
         private Foo foo1 = new Foo("Johan");
         private Foo foo2;
-        private Foo foo3 = new Foo("Erik");
+        private Foo foo3 = new Foo("Kajsa");
         private Foo foo4;
+        private Foo foo5 = new Foo("Pudeln");
+        private Foo foo6 = new Foo("Loke");
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -72,6 +74,38 @@
                 }
 
                 this.foo4 = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Foo Foo5
+        {
+            get => this.foo5;
+
+            set
+            {
+                if (ReferenceEquals(value, this.foo5))
+                {
+                    return;
+                }
+
+                this.foo5 = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Foo Foo6
+        {
+            get => this.foo6;
+
+            set
+            {
+                if (ReferenceEquals(value, this.foo6))
+                {
+                    return;
+                }
+
+                this.foo6 = value;
                 this.OnPropertyChanged();
             }
         }

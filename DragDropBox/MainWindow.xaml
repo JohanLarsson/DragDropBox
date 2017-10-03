@@ -2,44 +2,159 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:dragDropBox="clr-namespace:DragDropBox"
+        xmlns:local="clr-namespace:DragDropBox"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="MainWindow"
-        Width="525"
+        Width="400"
         Height="350"
         mc:Ignorable="d">
     <Window.DataContext>
-        <dragDropBox:ViewModel />
+        <local:ViewModel />
     </Window.DataContext>
-    <UniformGrid Columns="2"
-                 DragLeave="OnDragLeave"
-                 Rows="2">
+
+    <Window.Resources>
+        <local:FooTemplateSelector x:Key="FooTemplateSelector">
+            <local:FooTemplateSelector.EmptyTemplate>
+                <DataTemplate DataType="{x:Type local:Foo}">
+                    <Rectangle Width="100"
+                               Height="50"
+                               Fill="Transparent"
+                               Stroke="Black"
+                               StrokeDashArray="4 4"
+                               StrokeThickness="1" />
+                </DataTemplate>
+            </local:FooTemplateSelector.EmptyTemplate>
+
+            <local:FooTemplateSelector.FooTemplate>
+                <DataTemplate DataType="{x:Type local:Foo}">
+                    <Border Width="100"
+                            Height="50"
+                            Background="Yellow">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Name}" />
+                    </Border>
+                </DataTemplate>
+            </local:FooTemplateSelector.FooTemplate>
+        </local:FooTemplateSelector>
+        <Style x:Key="DragDropStyle" TargetType="{x:Type ContentPresenter}">
+            <Setter Property="AllowDrop" Value="True" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="ContentTemplateSelector" Value="{StaticResource FooTemplateSelector}" />
+        </Style>
+    </Window.Resources>
+
+    <UniformGrid Columns="2" Rows="3">
         <ContentPresenter x:Name="ContentPresenter1"
-                          AllowDrop="True"
-                          Content="{Binding Foo1}"
-                          ContentTemplateSelector="{StaticResource FooTemplateSelector}"
+                          Content="{Binding Foo1, Mode=TwoWay}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
                           Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown" />
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter2"
-                          AllowDrop="True"
                           Content="{Binding Foo2, Mode=TwoWay}"
-                          ContentTemplateSelector="{StaticResource FooTemplateSelector}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
                           Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown" />
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter3"
-                          AllowDrop="True"
                           Content="{Binding Foo3, Mode=TwoWay}"
-                          ContentTemplateSelector="{StaticResource FooTemplateSelector}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
                           Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown" />
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter4"
-                          AllowDrop="True"
                           Content="{Binding Foo4, Mode=TwoWay}"
-                          ContentTemplateSelector="{StaticResource FooTemplateSelector}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
                           Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown" />
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
+
+        <ContentPresenter x:Name="ContentPresenter5"
+                          Content="{Binding Foo5, Mode=TwoWay}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
+                          Drop="OnDrop"
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
+
+        <ContentPresenter x:Name="ContentPresenter6"
+                          Content="{Binding Foo6, Mode=TwoWay}"
+                          DragEnter="OnDragEnter"
+                          DragLeave="OnDragLeave"
+                          Drop="OnDrop"
+                          MouseLeftButtonDown="OnMouseLeftButtonDown"
+                          Style="{StaticResource DragDropStyle}" />
     </UniformGrid>
 </Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
