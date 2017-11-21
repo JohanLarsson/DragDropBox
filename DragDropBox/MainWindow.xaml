@@ -45,53 +45,34 @@
         </Style>
     </Window.Resources>
 
-    <UniformGrid Columns="2" Rows="3">
+    <UniformGrid Columns="2"
+                 DragEnter="OnDragEnter"
+                 DragLeave="OnDragLeave"
+                 Drop="OnDrop"
+                 MouseLeftButtonDown="OnMouseLeftButtonDown"
+                 Rows="3">
         <ContentPresenter x:Name="ContentPresenter1"
                           Content="{Binding Foo1, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter2"
                           Content="{Binding Foo2, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter3"
                           Content="{Binding Foo3, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter4"
                           Content="{Binding Foo4, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter5"
                           Content="{Binding Foo5, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
 
         <ContentPresenter x:Name="ContentPresenter6"
                           Content="{Binding Foo6, Mode=TwoWay}"
-                          DragEnter="OnDragEnter"
-                          DragLeave="OnDragLeave"
-                          Drop="OnDrop"
-                          MouseLeftButtonDown="OnMouseLeftButtonDown"
                           Style="{StaticResource DragDropStyle}" />
     </UniformGrid>
 </Window>
