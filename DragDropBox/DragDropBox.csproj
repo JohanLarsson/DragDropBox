@@ -37,8 +37,8 @@
     <CodeAnalysisRuleSet>DragDropBox.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gu.Wpf.Adorners, Version=1.2.0.0, Culture=neutral, PublicKeyToken=6dfb64f9972bd31d, processorArchitecture=MSIL">
-      <HintPath>..\packages\Gu.Wpf.Adorners.1.2.0.0\lib\net45\Gu.Wpf.Adorners.dll</HintPath>
+    <Reference Include="Gu.Wpf.Adorners, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6dfb64f9972bd31d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gu.Wpf.Adorners.1.3.1.0\lib\net45\Gu.Wpf.Adorners.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xaml">
@@ -80,10 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Analyzer Include="..\packages\PropertyChangedAnalyzers.2.5.0.0\analyzers\dotnet\cs\PropertyChangedAnalyzers.Analyzers.dll" />
+    <Analyzer Include="..\packages\PropertyChangedAnalyzers.2.5.0.0\analyzers\dotnet\cs\PropertyChangedAnalyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta004\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta004\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-    <Analyzer Include="..\packages\WpfAnalyzers.0.2.7.10\analyzers\dotnet\cs\WpfAnalyzers.Analyzers.dll" />
-    <Analyzer Include="..\packages\WpfAnalyzers.0.2.7.10\analyzers\dotnet\cs\WpfAnalyzers.CodeFixes.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
